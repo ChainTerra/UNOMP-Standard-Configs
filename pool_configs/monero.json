@@ -1,0 +1,74 @@
+{
+    "enabled": true,
+    "coin": "dash.json",
+    "auxes": [ // Defines auxillery coins
+        {
+            "coin": "dash.json",
+            "daemons": [ // It is reccomended to supply multiple daemons here for redundancy
+                {
+                    "host": "hostip",
+                    "port": port#,
+                    "user": "username",
+                    "password": "password"
+                }
+            ]
+        }
+    ],
+    "address": "address",
+    "rewardRecipients": {
+        "rewardaddress": 2
+    },
+    "paymentProcessing": {
+        "enabled": true,
+        "paymentInterval": 10,
+        "minimumPayment": 0,
+        "daemon": {
+            "host": "127.0.0.1",
+            "port": 19334,
+            "user": "username",
+            "password": "password"
+        }
+    },
+    "ports": {
+        "3010": {
+            "diff": 8
+        },
+        "3034": {
+            "diff": 32,
+            "varDiff": {
+                "minDiff": 8,
+                "maxDiff": 512,
+                "targetTime": 15,
+                "retargetTime": 90,
+                "variancePercent": 30
+            }
+        },
+        "3260": {
+            "diff": 256
+        }
+    },
+    "daemons": [
+        {
+            "host": "127.0.0.1",
+            "port": 19334,
+            "user": "username",
+            "password": "password"
+        }
+    ],
+    "p2p": {
+        "enabled": true,
+        "host": "127.0.0.1",
+        "port": 29333,
+        "disableTransactions": false
+    },
+    "mposMode": {
+        "enabled": true,
+        "host": "127.0.0.1",
+        "port": 3308,
+        "user": "user",
+        "password": "password",
+        "database": "ltc",
+        "checkPassword": false,
+        "autoCreateWorker": false
+    }
+}
